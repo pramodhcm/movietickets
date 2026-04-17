@@ -1,0 +1,31 @@
+package com.booking.movietickets.model;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.List;
+
+@Entity
+@Table(name = "screens")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Screen {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(name = "total_seats", nullable = false)
+    private Integer totalSeats;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "theatre_id", nullable = false)
+    private Theatre theatre;
+
+    @OneToMany(mappedBy = "screen", cascade = CascadeType.ALL)
+    private List<Seat> seats;
+}

@@ -1,0 +1,25 @@
+spring:
+  security:
+    user:
+      name: pramod
+      password: "9876"
+  application:
+    name: movietickets
+  datasource:
+    url: jdbc:postgresql://localhost:5432/movietickets
+    username: postgres
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
