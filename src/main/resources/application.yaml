@@ -1,14 +1,14 @@
 spring:
   security:
     user:
-      name: pramod
-      password: "9876"
+      name: 
+      password: 
   application:
     name: movietickets
   datasource:
     url: jdbc:postgresql://localhost:5432/movietickets
-    username: postgres
-    password: root
+    username: 
+    password: 
 
   jpa:
     hibernate:
